@@ -26,8 +26,43 @@ Quiz-Game/
 Install a C compiler (GCC/MinGW/CodeBlocks).
 Open terminal or command prompt in the project folder.
 Compile the code:
+
 gcc quiz.c -o quiz
 Run the program:
 ./quiz
 📝 Description
 This Quiz Game is a simple command-line program that asks a set of multiple-choice questions. The user inputs answers, the program checks correctness, updates the score, and displays the final results. It demonstrates key C concepts such as variables, conditional statements, user input, and logical flow.
+#include <stdio.h>
+
+int main() {
+    int score = 0;
+    char ans;
+
+    printf("===== QUIZ GAME =====\n\n");
+
+    printf("1. What is the capital of India?\n");
+    printf("A. Delhi\nB. Mumbai\nC. Kolkata\nD. Chennai\n");
+    printf("Your answer: ");
+    scanf(" %c", &ans);
+
+    if (ans == 'A' || ans == 'a') score++;
+
+    printf("\n2. Who invented C language?\n");
+    printf("A. Bill Gates\nB. Dennis Ritchie\nC. James Gosling\nD. Mark Zuckerberg\n");
+    printf("Your answer: ");
+    scanf(" %c", &ans);
+
+    if (ans == 'B' || ans == 'b') score++;
+
+    printf("\n3. Which data type is used for characters?\n");
+    printf("A. int\nB. char\nC. float\nD. double\n");
+    printf("Your answer: ");
+    scanf(" %c", &ans);
+
+    if (ans == 'B' || ans == 'b') score++;
+
+    printf("\n===== QUIZ OVER =====\n");
+    printf("Your Score: %d / 3\n", score);
+
+    return 0;
+}
